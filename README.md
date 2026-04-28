@@ -1,154 +1,124 @@
-# Jumia_Sales_Excel_Project
+# Jumia Product Performance Analysis — Excel Dashboard
 
-## Project Overview
+![Excel](https://img.shields.io/badge/Microsoft%20Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)
+![Pivot Tables](https://img.shields.io/badge/Pivot%20Tables-Analysis-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge)
 
-This project focuses on analyzing product performance data from Jumia using Microsoft Excel. The goal was to understand how pricing, discounts, and customer feedback influence product engagement and overall performance. The final output is an interactive dashboard that supports data-driven decision-making.
-
----
-
-## Dataset Description
-
-The dataset contains product-level information including:
-
-* Product name
-* Current price
-* Old price
-* Discount percentage
-* Number of reviews
-* Product rating
-
-<img width="1306" height="45" alt="image" src="https://github.com/user-attachments/assets/b2ac0ae4-c6b6-4c58-b900-7ea5eda8e770" />
+> Analyzing how pricing, discounts, and customer feedback drive product engagement on Africa's largest e-commerce platform — built entirely in Excel.
 
 ---
 
-## Data Cleaning and Preparation
+## The Question I Was Trying to Answer
 
-Before analysis, several data quality issues were addressed:
+Do higher discounts actually lead to better product performance? Or is there more to it?
 
-* Missing values in the Reviews and Rating columns were identified and handled
-* Duplicate product entries were removed
-* Price columns were cleaned by removing currency symbols and converting them into numeric values
-* Discount values were formatted correctly as percentages
-* Ratings originally stored as text were converted into numeric values
-* Negative review values were corrected to ensure consistency
-
-These steps ensured the dataset was accurate and ready for analysis.
-<img width="1574" height="624" alt="image" src="https://github.com/user-attachments/assets/eb3158c0-54dc-46ca-907a-2aea6d43fcfd" />
+That's what drove this project. Using product-level data scraped from Jumia, I wanted to understand the relationship between pricing strategy, customer ratings, and engagement — and surface which products are genuinely performing versus just appearing to.
 
 ---
 
-## Data Enrichment
+## Dataset
 
-Additional columns were created to enhance the analysis:
+Product-level data including current price, old price, discount percentage, number of reviews, and customer ratings.
 
-* **Discount Amount** calculated as the difference between old price and current price
-  <img width="1064" height="243" alt="image" src="https://github.com/user-attachments/assets/46b4bac5-97cf-4115-9df8-25b80e694aaa" />
-
-* **Rating Category** grouped into Poor, Average, and Excellent
-  <img width="988" height="80" alt="image" src="https://github.com/user-attachments/assets/04c54ee8-7e79-43f6-8557-3492bcd6d75a" />
-
-* **Discount Category** grouped into Low, Medium, and High
-<img width="935" height="96" alt="image" src="https://github.com/user-attachments/assets/d9a2c11a-ec4a-4a96-99f4-7592e371b448" />
-
-These new fields made it easier to segment and interpret the data.
+<img width="1306" alt="Dataset preview" src="https://github.com/user-attachments/assets/b2ac0ae4-c6b6-4c58-b900-7ea5eda8e770" />
 
 ---
 
-## Analysis and Insights
-<img width="1387" height="612" alt="image" src="https://github.com/user-attachments/assets/e0206411-a9c9-41b4-9bb2-1949362a68a9" />
+## Data Cleaning
 
-### Descriptive Analysis
+The raw data had a few issues that needed sorting before any analysis could be trusted:
 
-The dataset was explored to understand general patterns:
+- Price columns had currency symbols embedded as text — stripped and converted to numeric
+- Some review counts came in as negative values, which were corrected
+- Ratings stored as text strings were cast to numbers
+- Missing values in Reviews and Rating columns were handled
+- Duplicate product entries removed
 
-* Calculated average current price, old price, discount percentage, and rating
-* Identified the most expensive and least expensive products
-* Compared average ratings and discounts across discount categories
-* Analyzed how products are distributed across rating categories
-
-This provided a summary view of the dataset.
-<img width="1518" height="130" alt="image" src="https://github.com/user-attachments/assets/410f1595-82b8-4070-896e-d342382b62f6" />
+<img width="1574" alt="Data cleaning steps" src="https://github.com/user-attachments/assets/eb3158c0-54dc-46ca-907a-2aea6d43fcfd" />
 
 ---
 
-### Trend and Relationship Analysis
+## Feature Engineering
 
-Relationships between key variables were examined:
+Three new columns were created to make the data more useful for segmentation:
 
-* Compared discount percentage with number of reviews
-* Analyzed how ratings relate to customer engagement
-* Observed whether higher discounts lead to more reviews
-* Evaluated if highly rated products receive more engagement
+**Discount Amount** — difference between old price and current price, giving an absolute figure rather than just a percentage
 
-This helped identify patterns in customer behavior.
-<img width="977" height="675" alt="image" src="https://github.com/user-attachments/assets/540d365b-6a70-499d-abe4-2202e9ef741f" />
+<img width="1064" alt="Discount amount formula" src="https://github.com/user-attachments/assets/46b4bac5-97cf-4115-9df8-25b80e694aaa" />
 
----
+**Rating Category** — Poor / Average / Excellent buckets to make ratings easier to filter and visualize
 
-### Product Performance Analysis
+<img width="988" alt="Rating category formula" src="https://github.com/user-attachments/assets/04c54ee8-7e79-43f6-8557-3492bcd6d75a" />
 
-Top and bottom performing products were identified:
+**Discount Category** — Low / Medium / High groupings for the same reason
 
-* Top 10 products with the highest discounts
-* Top 10 products with the most reviews
-* Top 5 highest-rated and bottom 5 lowest-rated products
-* Comparison between high-discount and low-discount products based on ratings and reviews
-
-This section highlights which products perform best and which need improvement.
-<img width="1443" height="658" alt="image" src="https://github.com/user-attachments/assets/8f859c57-f50c-4d85-95c3-2b13412be384" />
+<img width="935" alt="Discount category formula" src="https://github.com/user-attachments/assets/d9a2c11a-ec4a-4a96-99f4-7592e371b448" />
 
 ---
 
-## Dashboard Design
+## Analysis
 
-An interactive Excel dashboard was created with the following sections:
+<img width="1387" alt="Analysis overview" src="https://github.com/user-attachments/assets/e0206411-a9c9-41b4-9bb2-1949362a68a9" />
 
-### Overview
+### Descriptive Stats
 
-* Total number of products
-* Average rating
-* Average discount percentage
-* Total number of reviews
+Starting point was getting a feel for the data — averages for price, discount, and rating; most and least expensive products; how items were distributed across rating and discount categories.
 
-### Product Performance
+<img width="1518" alt="Descriptive statistics" src="https://github.com/user-attachments/assets/410f1595-82b8-4070-896e-d342382b62f6" />
 
-* Top products by rating
-* Top products by reviews
-* Top products by discount
+### Discount vs. Engagement
 
-### Trend Analysis
+This is where things got interesting. I looked at whether higher discounts correlated with more reviews (a proxy for customer traffic and purchases). The short answer: somewhat, but not as strongly as you'd expect.
 
-* Visual comparison of discount versus reviews
-* Visual comparison of rating versus reviews
+<img width="977" alt="Discount vs reviews chart" src="https://github.com/user-attachments/assets/540d365b-6a70-499d-abe4-2202e9ef741f" />
 
-### Product Categories
+### Product Performance Rankings
 
-* Distribution of products by rating category
-* Distribution of products by discount category
-<img width="635" height="521" alt="image" src="https://github.com/user-attachments/assets/4f5cde94-3335-4493-9040-c0ef1c74a2f5" />
+- Top 10 by discount
+- Top 10 by number of reviews  
+- Top 5 highest-rated and bottom 5 lowest-rated
+- Head-to-head: high-discount vs low-discount products on ratings and reviews
+
+<img width="1443" alt="Product performance rankings" src="https://github.com/user-attachments/assets/8f859c57-f50c-4d85-95c3-2b13412be384" />
 
 ---
 
-## Tools and Techniques Used
+## Dashboard
 
-* Pivot tables for data summarization
-* Charts including bar charts, pie charts, and scatter plots
-* Conditional formatting to highlight key insights
-* Slicers for interactivity and filtering
+Built an interactive dashboard with slicers so anyone can explore the data without touching the underlying sheets.
 
----
+<img width="635" alt="Excel dashboard" src="https://github.com/user-attachments/assets/4f5cde94-3335-4493-9040-c0ef1c74a2f5" />
 
-## Key Insights
-
-* Products with higher discounts tend to attract more customer attention, but not always better ratings
-* Highly rated products generally receive more reviews, indicating trust and satisfaction
-* Some products have high discounts but low ratings, suggesting possible quality issues
-* Balanced pricing and quality appear to drive the best performance
+**What's on it:**
+- KPI cards: total products, average rating, average discount, total reviews
+- Top products by rating, reviews, and discount
+- Scatter plots for discount vs. reviews and rating vs. reviews
+- Donut/bar charts for rating and discount category distributions
 
 ---
 
-## Conclusion
+## What I Found
 
-This project demonstrates how Excel can be used to transform raw data into meaningful insights. The dashboard provides a clear view of product performance and helps identify trends that can guide better business decisions.
+**Discounts drive attention, not loyalty.** Products with the biggest markdowns pulled in more reviews on average — but their ratings weren't higher. People click on a deal; they don't necessarily love what they receive.
+
+**High ratings and high engagement go together.** Well-rated products consistently had more reviews, which suggests trust compounds — customers are more likely to buy (and leave feedback on) something others have already validated.
+
+**Some products are hiding a quality problem behind a discount.** A cluster of items had high discounts but below-average ratings. That's a flag worth flagging to any merchandising team.
+
+**The sweet spot is quality at a fair price** — not the deepest discount, not the flashiest product page.
 
 ---
+
+## Tools Used
+
+Excel — specifically: Pivot Tables, XLOOKUP / IF / nested formulas, bar/pie/scatter charts, conditional formatting, and slicers for dashboard interactivity.
+
+---
+
+## Files
+
+```
+📂 Jumia_Sales_Excel_Project/
+├── 📊 Jumia_Analysis.xlsx      # Main workbook (raw data, cleaned data, analysis, dashboard)
+└── 📄 README.md
+```
