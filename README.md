@@ -1,10 +1,18 @@
 # Jumia Product Performance Analysis — Excel Dashboard
 
-![Excel](https://img.shields.io/badge/Microsoft%20Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)
-![Pivot Tables](https://img.shields.io/badge/Pivot%20Tables-Analysis-blue?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge)
+Analyzing how pricing, discounts, and customer feedback drive product engagement on Africa's largest e-commerce platform — built entirely in Excel.
 
-> Analyzing how pricing, discounts, and customer feedback drive product engagement on Africa's largest e-commerce platform — built entirely in Excel.
+---
+
+## Tools Used
+
+![Excel](https://img.shields.io/badge/Microsoft%20Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)
+
+Specifically: Pivot Tables, XLOOKUP / IF / nested formulas, bar/pie/scatter charts, conditional formatting, and slicers for dashboard interactivity.
+
+![Pivot Tables](https://img.shields.io/badge/Pivot%20Tables-Analysis-blue?style=for-the-badge)
+
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge)
 
 ---
 
@@ -109,16 +117,7 @@ Built an interactive dashboard with slicers so anyone can explore the data witho
 
 ---
 
-## Tools Used
 
-Excel — specifically: Pivot Tables, XLOOKUP / IF / nested formulas, bar/pie/scatter charts, conditional formatting, and slicers for dashboard interactivity.
 
----
 
-## Files
 
-```
-📂 Jumia_Sales_Excel_Project/
-├── 📊 Jumia_Analysis.xlsx      # Main workbook (raw data, cleaned data, analysis, dashboard)
-└── 📄 README.md
-```
